@@ -1,0 +1,80 @@
+/*
+* @Author: sznews
+* @Date:   2018-08-20 11:19:54
+* @Last Modified by:   sznews
+* @Last Modified time: 2018-08-28 11:08:39
+*/
+.main{
+	width:800px;
+	height:300px;
+	margin:30px auto;
+	overflow:hidden;
+	position: relative;
+}
+.banner{
+	width:800px;
+	height:300px;
+	position:relative;
+}
+.banner-slide{
+	width: 800px;
+	height:300px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position:absolute;
+	display: none;
+}
+.actived{
+	display: block;
+}
+.slide1{
+	background-image:url('./images/1.jpg');
+}
+.slide2{
+	background-image:url('./images/2.jpg');
+}
+.slide3{
+	background-image:url('./images/3.jpg');
+}
+.slide4{
+	background-image:url('./images/4.jpg');
+}
+
+.button{
+	position: absolute;
+	width: 40px;
+	height:80px;
+	top:50%;
+	left:0;
+	background:#ccc;
+	opacity: 0.1;
+	margin-top:-40px;
+}
+.button:hover{
+	opacity: 0.8;
+}
+.next{
+	left:auto;
+	right:0;
+}
+
+.dots{
+	position:absolute;
+	right:24px;
+	bottom: 24px;
+	text-align:right; 
+}
+.dots span{
+	display: inline-block;
+	width: 12px;
+	height:12px;
+	border-radius:50%;
+	background-color: rgba(7,17,27,0.4); 
+	margin-left: 8px;
+	box-shadow:0 0 0 2px rgba(255,255,255,0.8) inset;
+}
+.dots span.dotactived{
+	box-shadow: 0 0 0 2px rgba(7,17,27,0.4) inset;
+	background-color: #fff;
+}
