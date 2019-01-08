@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>获取图片尺寸</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<input id="picpath" type="file"></input>
+	<div>
+		<img id="pic" style="display:none"></img>
+	</div>
+	
+	<p id="picsize"></p>
+</body>
+<script type="text/javascript">
+	var picpath=document.getElementById('picpath');
+	var pic=document.getElementById('pic');
+	var picsize=document.getElementById('picsize');
+	var image=new Image();
+
+	function callback(picsize,pic){
+		picsize.innerHTML='宽：'+pic.naturalWidth+',高：'+pic.naturalHeight;
+	}
+	picpath.addEventListener('change',function(){
+		// console.log(this);
+		var file=this.files[0];
+		var reader=new FileReader();
+		
+		
+		reader.onload=function(){
+			
+			pic.src=reader.result;
+			console.log(pic);
+
+			if(pic.complete){
+				callback(picsize,pic);
+			}else{
+				pic.onload=function(){
+					callback(picsize,pic);
+					pic.onload=null;
+				}
+			}
+		}
+		reader.readAsDataURL(file);
+		// reader.addEventListener('load',function(){
+		// 	pic.src=reader.result;
+		// 	image.src=pic.src;
+		// 	console.log(image);
+		// 	picsize.innerHTML='宽：'+image.naturalWidth+',高：'+image.naturalHeight;
+		// },false);
+	});
+
+
+
+</script>
+</html>
