@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>根据图片url获取图片大小</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<label id="picurllabel">图片路径：</label>
+	<input id="picurl" type="text" name="picurl"/>
+	<button id="getsize">获取图片大小</button>
+	<div>
+		<img id="pic" src="">
+	</div>
+	<script type="text/javascript">
+		var picurl=document.getElementById('picurl');
+		var getsize=document.getElementById('getsize');
+		var pic=document.getElementById('pic');
+		var image=new Image();
+		getsize.addEventListener('click',function(){
+			console.log(picurl);
+			pic.src=picurl.value;
+			image.src=pic.src;
+			pic.addEventListener('load',function(){
+				console.log('宽：'+image.width+';高：'+image.height);
+			});
+		});
+
+	</script>
+</body>
+</html>
